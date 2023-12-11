@@ -4,7 +4,7 @@ body {
 }
 
 #quiz-container {
-    max-width: 600px;
+    width: 80%;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
@@ -17,7 +17,7 @@ body {
 }
 
 img {
-    max-width: 80%;
+    width: 80%;
     height: auto;    
     border-radius: 8px;
     margin-bottom: 10px;
@@ -30,6 +30,35 @@ img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+@media (min-width: 481px) {
+    body{
+        display: flex;
+       height: 100vh;
+        width: auto;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    .options-container{
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    #quiz-container {
+        width: auto;
+        padding: 20px;
+       position: absolute;
+       top: 10%;
+       display: block;
+        
+    }
+    img{
+        width: auto;
+        height: 500px;
+        margin: 20px;
+    }
 }
 
 #score {
@@ -60,3 +89,9 @@ img {
     .selected {
         border: 4px solid #D9415D;
     }
+    
+    #high-score-message,
+    #low-score-message {
+        margin-top: 20px;
+    }
+    

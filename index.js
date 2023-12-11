@@ -60,7 +60,7 @@ let currentQuestion = 0;
                 } else {
                     showScore();
                 }
-            }, 800); // 2-second delay
+            }, 2000); // 2-second delay
         }
     }
 
@@ -81,11 +81,37 @@ let currentQuestion = 0;
 
     function showScore() {
         const quizContainer = document.getElementById('quiz-container');
-        quizContainer.innerHTML = `<div id="score">Final Score: ${score} out of ${questions.length}</div>`;
+        const scoreElement = document.getElementById('score');
+        const highScoreMessage = document.getElementById('high-score-message');
+        const lowScoreMessage = document.getElementById('low-score-message');
+
+        scoreElement.innerHTML = `Final Score: ${score} out of ${questions.length}`;
+
+        // Check for a high score
+        if (score > 8 ) {
+            highScoreMessage.innerHTML = `
+            <p>Congrats bananito 🍌! Your shape is diamond and count the number of the Dinos</p>
+            <img src="./Images/1x/dinopoker.png" alt="High Score Image">
+            `;
+        } else {
+            lowScoreMessage.innerHTML = `
+                <p>Almost there! Try again for a higher score so you can find the last clue!</p>
+                <img src="./Images/cocoresults.jpg" alt="Low Score Image">
+            `;
+        }
     }
 
     // Initial quiz setup
     setupQuestion();
+
+
+   
+
+
+
+
+      
+    
    
    
    /* function setupQuestion() {
